@@ -210,8 +210,8 @@ func pushUpdate() (err error) {
 }
 
 func getView() (stats VercelInsightsStats, err error) {
-	fromTime := time.Now().Add(time.Hour * -6 * 30 * 24).Format("2006-01-02T15:04:05-0700")
-	toTime := time.Now().Format("2006-01-02T15:04:05-0700")
+	fromTime := time.Now().UTC().Add(time.Hour * -1 * 31 * 24).Format("2006-01-02T15:04:05.123Z")
+	toTime := time.Now().UTC().Format("2006-01-02T15:04:05.123Z")
 	teamId := os.Getenv("VERCEL_TEAM_ID")
 	projectId := os.Getenv("VERCEL_PROJECT_ID")
 	filter := "{}"
